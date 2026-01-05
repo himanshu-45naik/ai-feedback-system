@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Fynd Feedback</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <h1>Submit Your Feedback</h1>
+
+    <label>Rating</label>
+    <select id="rating">
+      <option value="5">5 - Excellent</option>
+      <option value="4">4 - Good</option>
+      <option value="3">3 - Okay</option>
+      <option value="2">2 - Poor</option>
+      <option value="1">1 - Terrible</option>
+    </select>
+
+    <label>Review</label>
+    <textarea id="review" placeholder="Write your feedback here..."></textarea>
+
+    <button onclick="submitReview()">Submit</button>
+
+    <div id="status"></div>
+    <div id="ai-response" class="response-box"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
