@@ -1,4 +1,5 @@
 const API_BASE = "https://ai-feedback-system-ksy7.onrender.com";
+// const API_BASE = "http://localhost:8000"; //local
 
 async function loadReviews() {
   const tbody = document.getElementById("reviews");
@@ -12,21 +13,30 @@ async function loadReviews() {
   const data = await getAllReviews();
 
   const conclusionFilter = document.getElementById("conclusion-filter").value;
-  const sortFilter = document.getElementById("sort-filter").value;
-
   let filteredData = data;
 
-  if (conclusionFilter === "negative") {
+  if (conclusionFilter === "positive"){
     filteredData = data.filter(r =>
-      r.ai_conclusion &&
-      r.ai_conclusion.toLowerCase().includes("negative")
+      r.ai_conclusion && r.ai_conclusion.toLowerCase().includes("positive")
     );
   }
 
+  if (conclusionFilter === "negative") {
+    filteredData = data.filter(r =>
+      r.ai_conclusion && r.ai_conclusion.toLowerCase().includes("negative")
+    );
+  }
+
+  // Sorting Logic
+  const sortFilter = document.getElementById("sort-filter").value;
+
   if (sortFilter === "asc") {
     filteredData.sort((a, b) => a.rating - b.rating);
-  } else {
+  } else if (sortFilter === "desc") {
     filteredData.sort((a, b) => b.rating - a.rating);
+  } else if (sortFilter === "latest") {
+    filteredData.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+    
   }
 
   filteredData.forEach(r => {

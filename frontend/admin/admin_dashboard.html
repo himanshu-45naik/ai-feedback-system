@@ -13,10 +13,12 @@
   <div class="controls">
   <select id="conclusion-filter" onchange="loadReviews()">
     <option value="all">Show All</option>
+    <option value="positive">Positive Feedback Only</option>
     <option value="negative">Negative Feedback Only</option>
   </select>
 
   <select id="sort-filter" onchange="loadReviews()">
+    <option value=latest>Latest</option>
     <option value="desc">Rating: High to Low</option>
     <option value="asc">Rating: Low to High</option>
   </select>
