@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="admin_style.css" />
+</head>
+<body>
+
+  <h1 class="center-heading">ADMIN DASHBOARD</h1>
+
+
+  <div class="controls">
+  <select id="conclusion-filter" onchange="loadReviews()">
+    <option value="all">Show All</option>
+    <option value="negative">Negative Feedback Only</option>
+  </select>
+
+  <select id="sort-filter" onchange="loadReviews()">
+    <option value="desc">Rating: High to Low</option>
+    <option value="asc">Rating: Low to High</option>
+  </select>
+  </div>
+
+  <div id="dashboard-stats" class="stats-box"></div>
+
+  <div class="container">
+    <button onclick="loadReviews()">Refresh</button>
+    <table>
+      <thead>
+        <tr>
+          <th>Rating</th>
+          <th>Review</th>
+          <th>Conclusion</th>
+          <th>Summary</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="reviews"></tbody>
+    </table>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+/* Matching the Admin Dashboard's refined palette */
+:root {
+  --bg: #f8fafc;
+  --card-bg: #ffffff;
+  --text-main: #1e293b;
+  --text-light: #64748b;
+  --border: #e2e8f0;
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --success-bg: #f0fdf4;
+  --success-text: #166534;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg);
+  color: var(--text-main);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* Centers the form vertically on the screen */
+}
+
+.container {
+  width: 100%;
+  max-width: 450px;
+  background: var(--card-bg);
+  padding: 40px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--text-light);
+}
+
+/* Form Elements */
+select, 
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background-color: #ffffff;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--text-main);
+  box-sizing: border-box; /* Ensures padding doesn't affect width */
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+select:focus, 
+textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+textarea {
+  height: 120px;
+  resize: vertical; /* Allows user to resize height only */
+  margin-bottom: 20px;
+}
+
+select {
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+
+/* Button Styling */
+button {
+  width: 100%;
+  padding: 12px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background: var(--primary-hover);
+}
+
+/* AI Response Box Styling */
+.response-box {
+  margin-top: 24px;
+  padding: 16px;
+  background-color: var(--success-bg);
+  border: 1px solid #dcfce7;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--success-text);
+  display: none; /* Controlled by JS */
+}
+
+/* Optional: Small text for 'Submitted successfully' */
+.success-message {
+  color: var(--success-text);
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-top: 10px;
+  text-align: center;
+}

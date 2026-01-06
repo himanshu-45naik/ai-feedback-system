@@ -1,4 +1,4 @@
-const API_BASE = "http://localhost:8000";
+const API_BASE = "https://ai-feedback-system-ksy7.onrender.com";
 
 async function submitReview() {
   const rating = document.getElementById("rating").value;
