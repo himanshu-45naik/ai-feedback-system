@@ -22,6 +22,7 @@ def submit_review(data: ReviewCreate, db: Session= Depends(get_db)):
         rating=data.rating,
         review_text=data.review_text,
         ai_user_response=analysis["user_response"],
+        ai_conclusion=analysis["conclusion"],
         ai_summary=analysis["summary"],
         ai_actions=analysis["actions"],
     )

@@ -9,6 +9,7 @@ class Review(Base):
     rating = Column(Integer, nullable=False)
     review_text = Column(Text, nullable=True)
     ai_user_response = Column(Text) 
+    ai_conclusion = Column(Text)
     ai_summary = Column(Text)
     ai_actions = Column(Text)
     created_at = Column(DateTime, default=datetime.utcnow)

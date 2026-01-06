@@ -10,5 +10,6 @@ class ReviewResponse(BaseModel):
     rating: int
     review_text: str
     ai_user_response: str
+    ai_conclusion: str
     ai_summary: str
     ai_actions: str 
