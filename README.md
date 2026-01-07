@@ -2,6 +2,11 @@
 
 This repository contains a **production-style AI feedback system**
 
+URLs:
+  - User Dashboard - [https://ai-feedback-sys.netlify.app/user/user_dashboard.html](URL)
+  - Admin Dashboard - [https://ai-feedback-sys.netlify.app/admin/admin_dashboard.html](URL)
+
+---
 The system demonstrates:
 - Prompt-driven LLM usage
 - Backend-first API design
