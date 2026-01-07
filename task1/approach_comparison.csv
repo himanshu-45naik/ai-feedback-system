@@ -1,0 +1,4 @@
+approach,accuracy,json_validity_rate,valid_predictions,errors
+Approach 1,0.67,100.0,200,0
+Approach 2,0.665,100.0,200,0
+Approach 3,0.6934673366834171,99.5,199,1
