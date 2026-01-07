@@ -21,6 +21,11 @@ async function loadReviews() {
     );
   }
 
+  if (conclusionFilter === "constructive"){
+    filteredData = data.filter(r=>
+      r.ai_conclusion && r.ai_conclusion.toLowerCase().includes("constructive")
+    );
+  }
   if (conclusionFilter === "negative") {
     filteredData = data.filter(r =>
       r.ai_conclusion && r.ai_conclusion.toLowerCase().includes("negative")
