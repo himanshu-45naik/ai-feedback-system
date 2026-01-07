@@ -9,6 +9,7 @@
   --primary-hover: #1d4ed8;
   --success-bg: #f0fdf4;
   --success-text: #166534;
+  --success-border: #dcfce7;
 }
 
 body {
@@ -19,7 +20,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh; /* Centers the form vertically on the screen */
+  min-height: 100vh;
 }
 
 .container {
@@ -49,7 +50,6 @@ label {
   color: var(--text-light);
 }
 
-/* Form Elements */
 select, 
 textarea {
   width: 100%;
@@ -60,7 +60,7 @@ textarea {
   font-family: inherit;
   font-size: 0.95rem;
   color: var(--text-main);
-  box-sizing: border-box; /* Ensures padding doesn't affect width */
+  box-sizing: border-box;
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 
@@ -73,7 +73,7 @@ textarea:focus {
 
 textarea {
   height: 120px;
-  resize: vertical; /* Allows user to resize height only */
+  resize: vertical;
   margin-bottom: 20px;
 }
 
@@ -82,7 +82,7 @@ select {
   cursor: pointer;
 }
 
-/* Button Styling */
+/* Button Styling & States */
 button {
   width: 100%;
   padding: 12px;
@@ -93,11 +93,21 @@ button {
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition: all 0.2s ease;
 }
 
-button:hover {
+button:hover:not(:disabled) {
   background: var(--primary-hover);
+}
+
+button:disabled {
+  background: var(--text-light);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+button.btn-success {
+  background: #16a34a !important;
 }
 
 /* AI Response Box Styling */
@@ -105,19 +115,10 @@ button:hover {
   margin-top: 24px;
   padding: 16px;
   background-color: var(--success-bg);
-  border: 1px solid #dcfce7;
+  border: 1px solid var(--success-border);
   border-radius: 8px;
   font-size: 0.9rem;
   line-height: 1.5;
   color: var(--success-text);
-  display: none; /* Controlled by JS */
-}
-
-/* Optional: Small text for 'Submitted successfully' */
-.success-message {
-  color: var(--success-text);
-  font-size: 0.85rem;
-  font-weight: 500;
-  margin-top: 10px;
-  text-align: center;
+  display: none;
 }
